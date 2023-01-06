@@ -10,6 +10,9 @@ class Tile:
         self.fixed = fixed
         self.wormhole = wh
 
+    def __eq__(self, other):
+        return self.__id == other.__id
+
     def get_id(self):
         return self.__id
 

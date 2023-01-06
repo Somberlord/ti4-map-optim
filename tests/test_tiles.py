@@ -1,5 +1,6 @@
+import random
 import unittest
-from mapoptim.libtiles import tiles_conf
+from mapoptim.libtiles import tiles_conf, tile as libtile
 
 OPTIMAL_RES_AND_INF = {
     18: {'res': 0, 'inf': 6},
@@ -41,6 +42,8 @@ class TestTiles(unittest.TestCase):
             self.assertEqual(res, OPTIMAL_RES_AND_INF[tile]['res'])
             self.assertEqual(inf, OPTIMAL_RES_AND_INF[tile]['inf'])
 
-
-if __name__ == '__main__':
-    unittest.main
+    def test_tile_equality(self):
+        tile_id = random.randrange(80)
+        tile1 = libtile.Tile(tile_id)
+        tile2 = libtile.Tile(tile_id)
+        self.assertEqual(tile1, tile2)
