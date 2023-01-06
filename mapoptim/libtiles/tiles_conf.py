@@ -1,13 +1,13 @@
-from tile import Tile
-from planet import Planet
-from constants import *
+from .tile import Tile
+from .planet import Planet
+from .constants import *
 
 TILES = {
     # Base Game
     18: Tile(18, planets=[Planet('Mecatol Rex', 1, 6)], fixed=True),
     19: Tile(19, planets=[Planet('Wellon', 1, 2, traits=Trait.IND, skips=Skip.Y)]),
     20: Tile(20, planets=[Planet('Vefut II', 2, 2, traits=Trait.HAZ)]),
-    21: Tile(20, planets=[Planet('Thibah', 1, 1, traits=Trait.IND, skips=Skip.B)]),
+    21: Tile(21, planets=[Planet('Thibah', 1, 1, traits=Trait.IND, skips=Skip.B)]),
     22: Tile(22, planets=[Planet("Tar'mann", 1, 1, traits=Trait.IND, skips=Skip.G)]),
     23: Tile(23, planets=[Planet("Saudor", 2, 2, traits=Trait.IND)]),
     24: Tile(24, planets=[Planet("Mehar Xull", 1, 3, traits=Trait.HAZ, skips=Skip.B)]),
