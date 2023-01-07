@@ -17,3 +17,20 @@ class TestSlices(unittest.TestCase):
         self.assertEqual(test_slice_dict[slice.Slice.LE], tile.Tile(4))
         self.assertEqual(test_slice_dict[slice.Slice.AM], tile.Tile(5))
 
+    def test_from_string(self):
+        slice_string = "21,66,69,40,80"
+        test_slice = slice.Slice2Rings()
+        test_slice.load_from_string(slice_string)
+        self.assertEqual(test_slice.left_home, tile.Tile(21))
+        self.assertEqual(test_slice.front_home, tile.Tile(66))
+        self.assertEqual(test_slice.right_home, tile.Tile(69))
+        self.assertEqual(test_slice.left_equidistant, tile.Tile(40))
+        self.assertEqual(test_slice.adj_mecatol, tile.Tile(80))
+        slice_string = "21 66 69 40 80"
+        test_slice = slice.Slice2Rings()
+        test_slice.load_from_string(slice_string)
+        self.assertEqual(test_slice.left_home, tile.Tile(21))
+        self.assertEqual(test_slice.front_home, tile.Tile(66))
+        self.assertEqual(test_slice.right_home, tile.Tile(69))
+        self.assertEqual(test_slice.left_equidistant, tile.Tile(40))
+        self.assertEqual(test_slice.adj_mecatol, tile.Tile(80))
